@@ -7,9 +7,9 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 
 # Carregar o modelo salvo
-classifier = joblib.load("modelo_treinado.joblib")  # Substitua pelo caminho correto do arquivo .joblib
+classifier = joblib.load("modelo_treinado.joblib")  
 
-# Baixar stopwords
+
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
@@ -18,11 +18,8 @@ model = SentenceTransformer('all-mpnet-base-v2')
 
 # Função para limpar o texto
 def clean_text(text):
-    # Remover caracteres especiais
     text = re.sub(r"[^a-zA-Z0-9\s]", "", text)
-    # Converter para letras minúsculas
     text = text.lower().strip()
-    # Remover stopwords
     text = " ".join(word for word in text.split() if word not in stop_words)
     return text
 
@@ -62,7 +59,6 @@ if st.button("🔍 Fazer Previsão"):
                 <div style="text-align: center;">
                     <h2 style="color: #4CAF50; font-size: 48px;">🎉 Sentimento Positivo! 🎉</h2>
                     <p style="font-size: 20px;">Probabilidade de ser Positivo: <b>{prob_pos:.2f}%</b></p>
-                    <p style="font-size: 20px;">Probabilidade de ser Negativo: <b>{prob_neg:.2f}%</b></p>
                 </div>
                 """,
                 unsafe_allow_html=True,
@@ -72,7 +68,6 @@ if st.button("🔍 Fazer Previsão"):
                 f"""
                 <div style="text-align: center;">
                     <h2 style="color: #FF4B4B; font-size: 48px;">💔 Sentimento Negativo 💔</h2>
-                    <p style="font-size: 20px;">Probabilidade de ser Positivo: <b>{prob_pos:.2f}%</b></p>
                     <p style="font-size: 20px;">Probabilidade de ser Negativo: <b>{prob_neg:.2f}%</b></p>
                 </div>
                 """,
