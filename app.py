@@ -29,17 +29,36 @@ st.set_page_config(page_title="Classificação de Sentimento", page_icon="🎥",
 # Título da aplicação
 st.markdown(
     """
-    <h1 style="text-align: center; color: #FF4B4B;">🎬 Classificação de Sentimento de Filmes 🎥</h1>
-    <p style="text-align: center; font-size: 18px;">Digite um review abaixo para descobrir se o sentimento é <b>positivo</b> ou <b>negativo</b>!</p>
+    <h1 style="text-align: center; color: #FFF;">🎬 Classificação de Sentimento de Filmes</h1>
+    <p style="text-align: center; font-size: 20px;">Digite um review abaixo para descobrir se o sentimento é <b style="color:#4CAF50;">positivo</b> ou <b style="color:#FF4B4B;">negativo</b>!</p>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+    <style>
+    .custom-textarea textarea {
+        font-size: 18px;  /* Aumente o tamanho da fonte aqui */
+        padding: 10px;    /* Adicione um pouco de espaçamento interno */
+        line-height: 1.5; /* Ajuste o espaçamento entre linhas */
+    }
+    .custom-textarea p {
+        font-size: 24px;  /* Aumenta o tamanho do texto */
+        font-weight: bold;  /* Negrito (opcional) */
+        color: #4CAF50;  /* Cor do texto (opcional) */
+        margin-bottom: 10px;  /* Espaçamento inferior (opcional) */
+    }
+    </style>
     """,
     unsafe_allow_html=True,
 )
 
 # Entrada de texto para o review
-review = st.text_area("📝 Escreva seu review:", placeholder="Escreva aqui a sua opinião sobre o filme...")
+review = st.text_area("📝 Escreva sua opinião (apenas em inglês):", placeholder="Escreva aqui a sua opinião sobre o filme...", key="custom-textarea")
 
 # Botão para fazer a previsão
-if st.button("🔍 Fazer Previsão"):
+if st.button("🔍 Fazer previsão"):
     if review.strip():  # Verifica se o usuário digitou algo
         # Limpar e processar o texto
         new_reviews = clean_text(review)
