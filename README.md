@@ -3,5 +3,5 @@
 Pagina para utilizar modelo:
 https://movie-predictions-project.streamlit.app
 
-slides:
-[https://www.canva.com/design/DAGO_GhulHo/-nH-Nx29rNf-q_1hfg-8zw/view?utm_content=DAGO_GhulHo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h19816716b4](https://www.canva.com/design/DAGZSp86Ezw/AMCixI75omlFXgr5yCRwkw/view?utm_content=DAGZSp86Ezw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h75c08ce94f#1)
+slides apresentação:
+https://www.canva.com/design/DAGY1ztxEUo/HvOhQKxPwmH3F559bwtujw/view?utm_content=DAGY1ztxEUo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc5ab18f791
